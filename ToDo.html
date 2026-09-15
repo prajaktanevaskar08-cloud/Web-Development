@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"content="A responsive JavaScript To-Do List application with CRUD operations, filtering and local storage.">
+
+    <meta name="author"content="Your Name">
+
+    <title>To-Do List | Task Manager</title>
+
+    <link rel="stylesheet" href="ToDo.css">
+</head>
+
+<body>
+
+    <main class="app-container">
+
+        <section class="todo-app" aria-labelledby="app-title">
+
+            <header class="app-header">
+
+                <h1 id="app-title">
+                    My To-Do List
+                </h1>
+
+                <p>
+                    Organize your tasks and stay productive.
+                </p>
+
+            </header>
+
+
+            <!-- Add Task Form -->
+
+            <form id="task-form"class="task-form">
+
+                <label for="task-input">
+                    Add a new task
+                </label>
+
+                <div class="input-group">
+
+                    <input type="text" id="task-input"name="task"placeholder="Enter your task..."autocomplete="off"maxlength="150"required>
+
+                    <button type="submit"id="add-task-btn">
+                        Add Task
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- Filter Buttons -->
+
+            <div class="filters"role="group"aria-label="Filter tasks">
+
+                <button type="button"class="filter-btn active"data-filter="all"aria-pressed="true">
+                    All
+                </button>
+
+                <button type="button"class="filter-btn"data-filter="active"aria-pressed="false">
+                    Active
+                </button>
+
+                <button type="button"class="filter-btn"data-filter="completed"aria-pressed="false">
+                    Completed
+                </button>
+
+            </div>
+
+
+            <!-- Task List -->
+
+            <ul id="task-list"class="task-list"aria-live="polite"> </ul>
+
+
+            <!-- Footer -->
+
+            <div class="task-footer">
+
+                <p id="task-count">
+                    0 tasks remaining
+                </p>
+
+                <button type="button"id="clear-completed">
+                    Clear Completed
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="ToDo.js"></script>
+
+</body>
+</html>
