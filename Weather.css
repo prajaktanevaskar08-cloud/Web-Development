@@ -1,0 +1,341 @@
+/* ================================
+   CSS VARIABLES
+================================ */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-dark: #1d4ed8;
+    --background-color: #eef4ff;
+    --card-color: #ffffff;
+    --text-color: #1e293b;
+    --secondary-text: #64748b;
+    --border-color: #dbe3f0;
+    --error-color: #dc2626;
+    --success-color: #15803d;
+    --shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   BODY
+================================ */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #dbeafe, #eff6ff);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.weather-container {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+/* ================================
+   WEATHER CARD
+================================ */
+
+.weather-card {
+    width: 100%;
+    max-width: 700px;
+
+    background: var(--card-color);
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.weather-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.weather-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.weather-header p {
+    color: var(--secondary-text);
+}
+
+
+/* ================================
+   SEARCH BOX
+================================ */
+
+.search-box {
+    display: flex;
+    gap: 10px;
+
+    margin-bottom: 25px;
+}
+
+.search-box input {
+    flex: 1;
+
+    padding: 14px;
+
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+
+    font-size: 1rem;
+
+    outline: none;
+}
+
+.search-box input:focus {
+    border-color: var(--primary-color);
+}
+
+.search-box button {
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: var(--primary-color);
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: var(--primary-dark);
+}
+
+
+/* ================================
+   STATUS MESSAGES
+================================ */
+
+.status-message {
+    text-align: center;
+    color: var(--primary-color);
+    margin: 20px 0;
+}
+
+.error-message {
+    text-align: center;
+    color: var(--error-color);
+
+    background: #fee2e2;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ================================
+   WEATHER RESULT
+================================ */
+
+.weather-result {
+    text-align: center;
+}
+
+.location {
+    margin-bottom: 15px;
+}
+
+.location h2 {
+    font-size: 2rem;
+    margin-bottom: 5px;
+}
+
+.location p {
+    color: var(--secondary-text);
+}
+
+
+/* ================================
+   TEMPERATURE
+================================ */
+
+.temperature {
+    font-size: 4rem;
+    font-weight: bold;
+
+    color: var(--primary-color);
+
+    margin: 20px 0 5px;
+}
+
+.weather-description {
+    font-size: 1.2rem;
+    color: var(--secondary-text);
+
+    margin-bottom: 25px;
+}
+
+
+/* ================================
+   WEATHER DETAILS
+================================ */
+
+.weather-details {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.weather-item {
+    background: #f8fafc;
+
+    border: 1px solid var(--border-color);
+
+    padding: 20px;
+
+    border-radius: 12px;
+}
+
+.weather-item h3 {
+    font-size: 0.95rem;
+
+    color: var(--secondary-text);
+
+    margin-bottom: 8px;
+}
+
+.weather-item p {
+    font-size: 1.3rem;
+
+    font-weight: bold;
+}
+
+
+/* ================================
+   UPDATED TIME
+================================ */
+
+.updated-time {
+    margin-top: 25px;
+
+    font-size: 0.9rem;
+
+    color: var(--secondary-text);
+}
+
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (min-width: 600px) {
+
+    .weather-card {
+        padding: 40px;
+    }
+
+    .weather-details {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 500px) {
+
+    .weather-card {
+        padding: 20px;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-box button {
+        width: 100%;
+    }
+
+    .temperature {
+        font-size: 3rem;
+    }
+
+    .weather-details {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        scroll-behavior: auto;
+    }
+
+}

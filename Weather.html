@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Real-time weather dashboard using JavaScript Fetch API and Open-Meteo REST API">
+
+    <meta name="author" content="Prajakta">
+
+    <title>Weather Dashboard</title>
+
+    <link rel="stylesheet" href="Weather.css">
+</head>
+
+<body>
+
+    <main class="weather-container">
+
+        <section class="weather-card" aria-labelledby="page-title">
+
+            <header class="weather-header">
+                <h1 id="page-title">Weather Dashboard</h1>
+                <p>Get real-time weather information for any city.</p>
+            </header>
+
+            <!-- Search Section -->
+            <form id="search-form" class="search-box">
+
+                <label for="city-input" class="visually-hidden">
+                    Enter city name
+                </label>
+
+                <input
+                    type="text"
+                    id="city-input"
+                    placeholder="Enter city name"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" id="search-button">
+                    Search
+                </button>
+
+            </form>
+
+            <!-- Loading Message -->
+            <p id="loading" class="status-message" hidden>
+                Loading weather data...
+            </p>
+
+            <!-- Error Message -->
+            <p id="error-message" class="error-message" role="alert" hidden>
+            </p>
+
+            <!-- Weather Information -->
+            <section id="weather-section" class="weather-result" hidden>
+
+                <div class="location">
+                    <h2 id="city-name">City</h2>
+                    <p id="country-name">Country</p>
+                </div>
+
+                <div class="temperature">
+                    <span id="temperature">--</span>
+                    <span>°C</span>
+                </div>
+
+                <p id="weather-description" class="weather-description">
+                    Weather condition
+                </p>
+
+                <div class="weather-details">
+
+                    <article class="weather-item">
+                        <h3>Humidity</h3>
+                        <p>
+                            <span id="humidity">--</span>%
+                        </p>
+                    </article>
+
+                    <article class="weather-item">
+                        <h3>Wind Speed</h3>
+                        <p>
+                            <span id="wind-speed">--</span> km/h
+                        </p>
+                    </article>
+
+                    <article class="weather-item">
+                        <h3>Wind Direction</h3>
+                        <p>
+                            <span id="wind-direction">--</span>°
+                        </p>
+                    </article>
+
+                    <article class="weather-item">
+                        <h3>Weather Code</h3>
+                        <p id="weather-code">--</p>
+                    </article>
+
+                </div>
+
+                <p id="updated-time" class="updated-time"></p>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="Weather.js"></script>
+
+</body>
+</html>
