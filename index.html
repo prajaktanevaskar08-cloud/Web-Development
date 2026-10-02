@@ -1,98 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal portfolio website showcasing projects, skills, education and contact information.">
-    <meta name="keywords" content="portfolio, web developer, projects, skills, computer engineering">
-    <meta name="author" content="Prajakta Nevaskar">
-    <meta name="robots" content="index, follow">
 
-    <title>Prajakta Nevaskar | Personal Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Modern responsive e-commerce product catalog built with HTML, CSS and JavaScript.">
+
+    <meta name="keywords"
+        content="e-commerce, product catalog, JavaScript, web development">
+
+    <meta name="author" content="Prajakta">
+
+    <title>ShopEase | Product Catalog</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- Skip link for keyboard users -->
-    <a class="skip-link" href="#main-content">
-        Skip to main content
-    </a>
+    <!-- ================= HEADER ================= -->
 
-    <header role="banner">
-        <div class="container">
-            <a href="index.html" class="logo" aria-label="Prajakta - Home">
-                My Portfolio
+    <header class="header">
+
+        <nav class="navbar container" aria-label="Main navigation">
+
+            <a href="#home" class="logo" data-route="home">
+                ShopEase
             </a>
 
-            <nav aria-label="Primary navigation">
-                <ul>
-                    <li>
-                        <a href="index.html" aria-current="page">Home</a>
-                    </li>
+            <div class="nav-links">
 
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
+                <a href="#home" data-route="home">
+                    Home
+                </a>
 
-                    <li>
-                        <a href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+                <a href="#products" data-route="products">
+                    Products
+                </a>
 
-        </div>
+                <a href="#about" data-route="about">
+                    About
+                </a>
+
+                <button id="cart-button" class="cart-button">
+                    🛒 Cart
+                    <span id="cart-count">0</span>
+                </button>
+
+            </div>
+
+        </nav>
+
     </header>
 
-    <main id="main-content">
 
-        <section aria-labelledby="hero-heading">
-            <div class="container">
+    <!-- ================= MAIN ================= -->
 
-                <h1 id="hero-heading">
-                    Hi, I am Prajakta Nevaskar
-                </h1>
+    <main>
 
-                <p>
-                    A Computer Engineering student | Aspiring Developer
-                </p>
+        <!-- HOME PAGE -->
 
-                <a href="about.html"class="button">Learn more about me</a>
-            </div>
-        </section>
+        <section id="home-page" class="page">
 
+            <div class="hero container">
 
-        <section aria-labelledby="projects-heading">
+                <div class="hero-content">
 
-            <div class="container">
+                    <p class="hero-tag">
+                        MODERN ONLINE SHOPPING
+                    </p>
 
-                <h2 id="projects-heading">Featured Projects</h2>
+                    <h1>
+                        Find Products You Love
+                    </h1>
 
-                <div class="projects">
+                    <p>
+                        Explore our collection of quality products
+                        at affordable prices.
+                    </p>
 
-                    <article>
+                    <a href="#products"
+                        class="primary-button"
+                        data-route="products">
 
-                        <h3>Women Safety IoT Project</h3>
+                        Explore Products
 
-                        <p>
-                        <p>Developed an IoT based women safety system that detects emergencies, sends real-time email alerts, 
-                            attract nearby peoples, enables video capturing and sends live location to emergency contacts.</p>
-
-                        <a href="#" aria-label="View details of Project One">View Project</a>
-
-                    </article>
-
-
-                    <article>
-
-                        <h3>Campus Book Exchange System</h3>
-
-                        <p>Developed a web platform for buying and selling second-hand academic books.</p>
-
-                        <a href="#"aria-label="View details of Project Two">View Project</a>
-
-                    </article>
+                    </a>
 
                 </div>
 
@@ -101,20 +97,99 @@
         </section>
 
 
-        <section aria-labelledby="skills-heading">
+        <!-- PRODUCTS PAGE -->
+
+        <section id="products-page" class="page" hidden>
 
             <div class="container">
 
-                <h2 id="skills-heading">Technical Skills</h2>
+                <div class="page-heading">
 
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
-                    <li>Python</li>
-                    <li>Java</li>
-                    <li>Database Management</li>
-                </ul>
+                    <h1>Our Products</h1>
+
+                    <p>
+                        Browse products and add your favourites
+                        to the shopping cart.
+                    </p>
+
+                </div>
+
+
+                <!-- Search and filter -->
+
+                <div class="product-controls">
+
+                    <input
+                        type="search"
+                        id="search-input"
+                        placeholder="Search products..."
+                        aria-label="Search products"
+                    >
+
+                    <select
+                        id="category-filter"
+                        aria-label="Filter products by category">
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Loading -->
+
+                <p id="loading" class="loading">
+                    Loading products...
+                </p>
+
+
+                <!-- Error -->
+
+                <p id="error-message"
+                    class="error-message"
+                    role="alert"
+                    hidden>
+                </p>
+
+
+                <!-- Product Grid -->
+
+                <div
+                    id="product-grid"
+                    class="product-grid">
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT PAGE -->
+
+        <section id="about-page"
+            class="page"
+            hidden>
+
+            <div class="container about">
+
+                <h1>About ShopEase</h1>
+
+                <p>
+                    ShopEase is a responsive e-commerce product
+                    catalog developed as a web development
+                    capstone project.
+                </p>
+
+                <p>
+                    The project demonstrates modular JavaScript,
+                    client-side routing, REST API integration,
+                    responsive CSS, state management and
+                    production deployment.
+                </p>
 
             </div>
 
@@ -123,41 +198,68 @@
     </main>
 
 
-    <footer role="contentinfo">
+    <!-- ================= CART SIDEBAR ================= -->
+
+    <aside id="cart-sidebar"
+        class="cart-sidebar"
+        aria-label="Shopping cart"
+        hidden>
+
+        <div class="cart-header">
+
+            <h2>Your Cart</h2>
+
+            <button id="close-cart"
+                class="close-button"
+                aria-label="Close shopping cart">
+
+                ×
+
+            </button>
+
+        </div>
+
+        <div id="cart-items"
+            class="cart-items">
+
+        </div>
+
+        <div class="cart-footer">
+
+            <h3>
+                Total:
+                ₹<span id="cart-total">0.00</span>
+            </h3>
+
+            <button id="checkout-button"
+                class="primary-button">
+
+                Checkout
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
 
         <div class="container">
 
             <p>
-                &copy; 2026 Prajakta Nevaskar. All rights reserved.
+                © 2026 ShopEase. All rights reserved.
             </p>
-
-            <nav aria-label="Footer navigation">
-
-                <ul>
-                    <li>
-                        <a href="index.html">
-                            Home
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="about.html">
-                            About
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html">
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-
-            </nav>
 
         </div>
 
     </footer>
 
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>
